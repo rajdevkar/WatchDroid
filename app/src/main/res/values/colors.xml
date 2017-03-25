@@ -11,4 +11,9 @@
 
     <color name="white">#ffffff</color>
     <color name="black">#000000</color>
+
+    //keyboard
+    <color name="key_bg">#ff1565c0</color>
+    <color name="key_front">#ff2196f3</color>
+    <color name="key_space">#ff7eaadc</color>
 </resources>
