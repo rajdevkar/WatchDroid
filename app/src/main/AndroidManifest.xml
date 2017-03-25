@@ -59,7 +59,7 @@
         </service>
 
         <!-- Password setup screen -->
-        <activity android:name=".Setpass"
+        <activity android:name="com.arx_era.watchdroid.Setpass"
             android:screenOrientation="portrait"/>
 
     </application>
