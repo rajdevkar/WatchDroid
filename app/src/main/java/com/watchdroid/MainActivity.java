@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     @Override
     public void onBackPressed() {
         new AlertDialog.Builder(this)
-                .setIcon(R.mipmap.ic_launcher)
                 .setTitle("Exit")
                 .setMessage("Are you sure you want exit?")
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {

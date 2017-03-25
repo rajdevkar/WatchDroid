@@ -28,7 +28,6 @@ public class SplashScreen extends Activity {
                 finish();
             }else {
                 openapp();
-
                 Toast.makeText(SplashScreen.this, "If you enabled password then set pins to enable lockscreen",
                         Toast.LENGTH_SHORT).show();
             }

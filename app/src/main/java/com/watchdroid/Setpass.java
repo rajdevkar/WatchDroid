@@ -1,13 +1,17 @@
 package com.watchdroid;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.provider.Settings;
 
 import com.arx_era.watchdroid.R;
 
@@ -16,6 +20,8 @@ public class Setpass extends AppCompatActivity {
     EditText firstp,firstn,secondp,secondn;
     String firstps,firsts,secondps,seconds,fsp,ssp,fsn,ssn;
     private Boolean keypassonoff,keyloggingcheck,keyloggingset;
+    CheckBox start;
+    static SharedPreferences spf;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,5 +88,35 @@ public class Setpass extends AppCompatActivity {
                 }
             }
         });
+
+        start = (CheckBox) findViewById(R.id.start);
+        start.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (start.isChecked()) {
+                    Settings.System.putInt(getContentResolver(), "PiLocker", 1);
+                    startService(new Intent(Setpass.this, LockerService.class));
+                    save("on", "true");
+                } else {
+
+                    Settings.System.putInt(getContentResolver(), "PiLocker", 0);
+                    stopService(new Intent(Setpass.this,LockerService.class));
+                    startService(new Intent(Setpass.this,LockerService.class));
+                    save("on", "false");
+                    Intent i = new Intent();
+                    i.setAction("com.watchdroid.Lock");
+                    sendBroadcast(i);
+
+                }
+            }
+        });
+    }
+
+    public void save(String key, String value) {
+        spf = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor edit = spf.edit();
+        edit.putString(key, value);
+        edit.commit();
+
     }
 }
