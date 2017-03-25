@@ -29,7 +29,7 @@
     <string name="set_pass">Password</string>
     <string name="set_pass_info">Set password for WatchDroid</string>
     <string name="hideicon_category">Hide Icon</string>
-
+    <string name="lockscreen">Lock Screen</string>
     //set password
     <string name="first_num_pos">First number position :</string>
     <string name="first_num">First number :</string>

@@ -33,4 +33,5 @@
             android:summary="Show or Hide icon in launcher" >
         </CheckBoxPreference>
     </PreferenceCategory>
+
 </PreferenceScreen>
