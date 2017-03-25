@@ -1,6 +1,10 @@
 package com.watchdroid;
 
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -27,8 +31,20 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        SharedPreferences pref = getSharedPreferences(
+                "Pref",
+                Context.MODE_PRIVATE);
+        final Boolean keyhideicon = pref.getBoolean("keyhideicon", Boolean.parseBoolean(null));
+        if(keyhideicon)
+        {
+            PackageManager p = getPackageManager();
+            ComponentName componentName= new ComponentName(MainActivity.this, com.watchdroid.SplashScreen.class);
+            p.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+
+        }
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
