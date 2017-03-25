@@ -3,11 +3,6 @@ package com.keyboard;
 /**
  * Created by Tronix on 02-02-2017.
  */
-import java.io.File;
-import java.io.FileOutputStream;
-import java.nio.charset.Charset;
-import java.text.DateFormat;
-import java.util.Date;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -26,6 +21,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.view.inputmethod.InputMethodSubtype;
 
 import com.arx_era.watchdroid.R;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.nio.charset.Charset;
+import java.text.DateFormat;
+import java.util.Date;
 
 /**
  * Example of writing an input method for a soft keyboard.  This code is
