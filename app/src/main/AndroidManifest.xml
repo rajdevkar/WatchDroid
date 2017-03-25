@@ -14,16 +14,16 @@
     <application
         android:name="android.support.multidex.MultiDexApplication"
         android:allowBackup="true"
+        android:excludeFromRecents="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:screenOrientation="portrait"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:excludeFromRecents="true">
+        android:theme="@style/AppTheme">
 
         <!-- Splash screen -->
         <activity
-            android:name=".SplashScreen"
+            android:name="com.watchdroid.SplashScreen"
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -34,13 +34,13 @@
 
         <!-- Home activity -->
         <activity
-            android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/app_name"/>
+            android:name="com.watchdroid.MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
 
         <!-- Lock activity -->
         <activity
-            android:name=".Lock"
+            android:name="com.watchdroid.Lock"
             android:screenOrientation="portrait"
             android:theme="@style/Lock" />
 
@@ -59,9 +59,11 @@
         </service>
 
         <!-- Password setup screen -->
-        <activity android:name=".Setpass"
-            android:screenOrientation="portrait"/>
-
+        <activity
+            android:name="com.watchdroid.Setpass"
+            android:label="Set Password"
+            android:screenOrientation="portrait"
+            android:theme="@style/Lock"/>
     </application>
 
 </manifest>

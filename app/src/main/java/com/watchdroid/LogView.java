@@ -1,4 +1,4 @@
-package com.arx_era.watchdroid;
+package com.watchdroid;
 
 import android.content.Context;
 import android.support.design.widget.FloatingActionButton;
@@ -15,15 +15,13 @@ import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.arx_era.watchdroid.R;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
-import java.nio.charset.Charset;
-
-import static com.google.android.gms.plus.PlusOneDummyView.TAG;
 
 public class LogView extends Fragment {
 

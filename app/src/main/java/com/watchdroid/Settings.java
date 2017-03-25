@@ -1,14 +1,12 @@
-package com.arx_era.watchdroid;
+package com.watchdroid;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
-import android.preference.PreferenceManager;
-import android.util.Log;
-import android.widget.TextView;
 
+import com.arx_era.watchdroid.R;
 import com.github.machinarius.preferencefragment.PreferenceFragment;
 
 public class Settings extends PreferenceFragment {

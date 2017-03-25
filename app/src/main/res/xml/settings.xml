@@ -20,9 +20,10 @@
                     android:title="@string/set_pass"
                     android:summary="@string/set_pass_info">
                         <intent
-                            android:action="android.intent.action.VIEW"
-                            android:targetPackage="com.arx_era.watchdroid"
-                            android:targetClass="com.arx_era.watchdroid.Setpass" />
+                            android:action="com.watchdroid.Setpass"
+                            android:targetPackage="com.watchdroid"
+                            android:targetClass="com.watchdroid.Setpass"
+                             />
                 </PreferenceScreen>
         </PreferenceCategory>
 

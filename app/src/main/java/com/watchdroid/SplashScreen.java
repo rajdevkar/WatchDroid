@@ -1,4 +1,4 @@
-package com.arx_era.watchdroid;
+package com.watchdroid;
 
 import android.app.Activity;
 import android.content.Context;
