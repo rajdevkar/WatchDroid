@@ -61,9 +61,15 @@
         <!-- Password setup screen -->
         <activity
             android:name="com.watchdroid.Setpass"
-            android:label="Set Password"
-            android:screenOrientation="portrait"
-            android:theme="@style/Lock"/>
+            android:screenOrientation="portrait"/>
+
+        <receiver android:name="com.watchdroid.Listener">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE"/>
+                <data android:scheme="android_secret_code" android:host="111222"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
