@@ -1,4 +1,4 @@
-package com.keyboard;
+package com.arx_era_key;
 
 /**
  * Created by Tronix on 02-02-2017.
@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.inputmethodservice.Keyboard;
 import android.view.inputmethod.EditorInfo;
 
-import com.watchdroid.R;
+import com.arx_era.watchdroid.R;
 
 public class LatinKeyboard extends Keyboard {
 
@@ -47,7 +47,7 @@ public class LatinKeyboard extends Keyboard {
             return;
         }
 
-        switch (options&(EditorInfo.IME_MASK_ACTION| EditorInfo.IME_FLAG_NO_ENTER_ACTION)) {
+        switch (options&(EditorInfo.IME_MASK_ACTION|EditorInfo.IME_FLAG_NO_ENTER_ACTION)) {
             case EditorInfo.IME_ACTION_GO:
                 mEnterKey.iconPreview = null;
                 mEnterKey.icon = null;
@@ -80,9 +80,9 @@ public class LatinKeyboard extends Keyboard {
         }
     }
 
-    static class LatinKey extends Keyboard.Key {
+    static class LatinKey extends Key {
 
-        public LatinKey(Resources res, Keyboard.Row parent, int x, int y, XmlResourceParser parser) {
+        public LatinKey(Resources res, Row parent, int x, int y, XmlResourceParser parser) {
             super(res, parent, x, y, parser);
         }
 

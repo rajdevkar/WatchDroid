@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+        <style name="Lock" parent="Theme.AppCompat.Light.NoActionBar">
+                <item name="colorPrimary">#FF000000</item>
+                <item name="colorPrimaryDark">#59000000</item>
+                <item name="colorAccent">@color/white</item>
+                <item name="android:windowShowWallpaper">true</item>
+                <item name="android:windowBackground">@android:color/transparent</item>
+        </style>
+</resources>

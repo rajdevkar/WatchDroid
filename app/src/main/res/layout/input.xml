@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.keyboard.LatinKeyboardView
+<com.arx_era_key.LatinKeyboardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/keyboard"
-    android:layout_alignParentBottom="true"
+    android:keyTextColor="@color/white"
+    android:background="@color/key_bg"
+    android:keyTextSize="25sp"
+    android:keyBackground="@color/key_bg"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    />
+    android:layout_alignParentBottom="true"
+    android:keyPreviewLayout="@layout/preview"
+    android:popupLayout="@layout/keyboard_popup_layout">
+    </com.arx_era_key.LatinKeyboardView>

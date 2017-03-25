@@ -1,4 +1,4 @@
-package com.keyboard;
+package com.arx_era_key;
 
 /**
  * Created by Tronix on 02-02-2017.
@@ -10,7 +10,7 @@ import android.inputmethodservice.KeyboardView;
 import android.util.AttributeSet;
 import android.view.inputmethod.InputMethodSubtype;
 
-import com.watchdroid.R;
+import com.arx_era.watchdroid.R;
 
 public class LatinKeyboardView extends KeyboardView {
 

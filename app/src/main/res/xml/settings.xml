@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <PreferenceCategory android:title="@string/general_category" >
+                <CheckBoxPreference
+                    android:key="boot"
+                    android:title="@string/keylogboot"
+                    android:summary="@string/keylogbootinfo" >
+                </CheckBoxPreference>
+        </PreferenceCategory>
+
+        <PreferenceCategory android:title="@string/password_category" >
+                <CheckBoxPreference
+                    android:key="passonoff"
+                    android:title="@string/passonoff"
+                    android:summary="@string/passinfo" >
+                </CheckBoxPreference>
+                <PreferenceScreen
+                    android:key="renameCourses"
+                    android:title="@string/set_pass"
+                    android:summary="@string/set_pass_info">
+                        <intent
+                            android:action="android.intent.action.VIEW"
+                            android:targetPackage="com.arx_era.watchdroid"
+                            android:targetClass="com.arx_era.watchdroid.Setpass" />
+                </PreferenceScreen>
+        </PreferenceCategory>
+
+</PreferenceScreen>

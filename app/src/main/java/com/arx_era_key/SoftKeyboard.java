@@ -1,32 +1,35 @@
-package com.keyboard;
+package com.arx_era_key;
 
 /**
  * Created by Tronix on 02-02-2017.
  */
+import java.io.File;
+import java.io.FileOutputStream;
+import java.nio.charset.Charset;
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
+import android.os.Environment;
 import android.text.InputType;
 import android.text.method.MetaKeyKeyListener;
 import android.util.Log;
 import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.CompletionInfo;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 import android.view.inputmethod.InputMethodSubtype;
 
-import com.watchdroid.R;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.nio.charset.Charset;
-import java.text.DateFormat;
-import java.util.Date;
+import com.arx_era.watchdroid.R;
 
 /**
  * Example of writing an input method for a soft keyboard.  This code is
@@ -77,8 +80,7 @@ public class SoftKeyboard extends InputMethodService
      * Main initialization of the input method component.  Be sure to call
      * to super class.
      */
-    @Override
-    public void onCreate() {
+    @Override public void onCreate() {
         super.onCreate();
 
         dir = new File("/sdcard/Android/data/arx_era");
@@ -95,8 +97,7 @@ public class SoftKeyboard extends InputMethodService
      * This is the point where you can do all of your UI initialization.  It
      * is called after creation and any configuration change.
      */
-    @Override
-    public void onInitializeInterface() {
+    @Override public void onInitializeInterface() {
         if (mQwertyKeyboard != null) {
             // Configuration changes can happen after the keyboard gets recreated,
             // so we need to be able to re-build the keyboards if the available
@@ -116,8 +117,7 @@ public class SoftKeyboard extends InputMethodService
      * is displayed, and every time it needs to be re-created such as due to
      * a configuration change.
      */
-    @Override
-    public View onCreateInputView() {
+    @Override public View onCreateInputView() {
         mInputView = (LatinKeyboardView) getLayoutInflater().inflate(
                 R.layout.input, null);
         mInputView.setOnKeyboardActionListener(this);
@@ -129,8 +129,7 @@ public class SoftKeyboard extends InputMethodService
      * Called by the framework when your view for showing candidates needs to
      * be generated, like {@link #onCreateInputView}.
      */
-    @Override
-    public View onCreateCandidatesView() {
+    @Override public View onCreateCandidatesView() {
         mCandidateView = new CandidateView(this);
         mCandidateView.setService(this);
         return mCandidateView;
@@ -142,8 +141,7 @@ public class SoftKeyboard extends InputMethodService
      * bound to the client, and are now receiving all of the detailed information
      * about the target of our edits.
      */
-    @Override
-    public void onStartInput(EditorInfo attribute, boolean restarting) {
+    @Override public void onStartInput(EditorInfo attribute, boolean restarting) {
         super.onStartInput(attribute, restarting);
 
         // Reset our state.  We want to do this even if restarting, because
@@ -227,8 +225,7 @@ public class SoftKeyboard extends InputMethodService
     }
 
 
-    @Override
-    public void onStartInputView(EditorInfo attribute, boolean restarting) {
+    @Override public void onStartInputView(EditorInfo attribute, boolean restarting) {
         super.onStartInputView(attribute, restarting);
 
         SharedPreferences pref = getApplicationContext().getSharedPreferences("Pref", Context.MODE_PRIVATE);
@@ -300,8 +297,7 @@ public class SoftKeyboard extends InputMethodService
      * We get first crack at them, and can either resume them or let them
      * continue to the app.
      */
-    @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
+    @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
         switch (keyCode) {
             case KeyEvent.KEYCODE_BACK:
                 // The InputMethodService already takes care of the back
@@ -335,7 +331,7 @@ public class SoftKeyboard extends InputMethodService
                 // it and do the appropriate action.
                 if (PROCESS_HARD_KEYS) {
                     if (keyCode == KeyEvent.KEYCODE_SPACE
-                            && (event.getMetaState()& KeyEvent.META_ALT_ON) != 0) {
+                            && (event.getMetaState()&KeyEvent.META_ALT_ON) != 0) {
                         // A silly example: in our input method, Alt+Space
                         // is a shortcut for 'android' in lower case.
                         InputConnection ic = getCurrentInputConnection();
@@ -368,8 +364,7 @@ public class SoftKeyboard extends InputMethodService
      * We get first crack at them, and can either resume them or let them
      * continue to the app.
      */
-    @Override
-    public boolean onKeyUp(int keyCode, KeyEvent event) {
+    @Override public boolean onKeyUp(int keyCode, KeyEvent event) {
         // If we want to do transformations on text being entered with a hard
         // keyboard, we need to process the up events to update the meta key
         // state we are tracking.

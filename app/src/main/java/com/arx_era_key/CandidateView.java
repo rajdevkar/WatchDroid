@@ -1,4 +1,4 @@
-package com.keyboard;
+package com.arx_era_key;
 
 /**
  * Created by Tronix on 02-02-2017.
@@ -13,7 +13,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.watchdroid.R;
+import com.arx_era.watchdroid.R;
 
 import java.util.ArrayList;
 import java.util.List;
