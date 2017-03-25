@@ -54,9 +54,9 @@ public class Home extends Fragment {
             keylogstatus.setText(" Deactivate");
         }
         if(passonoff){
-            passonoffstatus.setText(" ON");
+            passonoffstatus.setText("ON");
         } else {
-            passonoffstatus.setText(" OFF");
+            passonoffstatus.setText("OFF");
         }
     }
 
