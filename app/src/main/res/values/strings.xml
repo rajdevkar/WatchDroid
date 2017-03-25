@@ -17,7 +17,6 @@
     <string name="status">Status</string>
     <string name="keylogger">Keylogger Status :</string>
     <string name="passonoffhome">Password protection :</string>
-
     //settings
     <string name="general_category">General</string>
     <string name="password_category">Password</string>
@@ -29,6 +28,7 @@
     <string name="key_log_view">View Log</string>
     <string name="set_pass">Password</string>
     <string name="set_pass_info">Set password for WatchDroid</string>
+    <string name="hideicon_category">Hide Icon</string>
 
     //set password
     <string name="first_num_pos">First number position :</string>

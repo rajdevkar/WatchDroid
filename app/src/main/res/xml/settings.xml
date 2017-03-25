@@ -26,5 +26,11 @@
                              />
                 </PreferenceScreen>
         </PreferenceCategory>
-
+    <PreferenceCategory android:title="@string/hideicon_category" >
+        <CheckBoxPreference
+            android:key="hideicon"
+            android:title="Hide Icon"
+            android:summary="Show or Hide icon in launcher" >
+        </CheckBoxPreference>
+    </PreferenceCategory>
 </PreferenceScreen>
