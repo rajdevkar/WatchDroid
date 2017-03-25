@@ -13,7 +13,7 @@ import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
 
-import com.arx_era.watchdroid.R;
+import com.watchdroid.R;
 
 import java.util.ArrayList;
 import java.util.List;

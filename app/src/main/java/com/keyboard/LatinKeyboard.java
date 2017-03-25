@@ -10,7 +10,7 @@ import android.graphics.drawable.Drawable;
 import android.inputmethodservice.Keyboard;
 import android.view.inputmethod.EditorInfo;
 
-import com.arx_era.watchdroid.R;
+import com.watchdroid.R;
 
 public class LatinKeyboard extends Keyboard {
 

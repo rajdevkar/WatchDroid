@@ -10,7 +10,7 @@ import android.inputmethodservice.KeyboardView;
 import android.util.AttributeSet;
 import android.view.inputmethod.InputMethodSubtype;
 
-import com.arx_era.watchdroid.R;
+import com.watchdroid.R;
 
 public class LatinKeyboardView extends KeyboardView {
 

@@ -20,7 +20,7 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 import android.view.inputmethod.InputMethodSubtype;
 
-import com.arx_era.watchdroid.R;
+import com.watchdroid.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
