@@ -41,7 +41,8 @@
                 android:id="@+id/first_num_pos"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:maxLength="1" />
+                android:maxLength="1"
+                />
 
         </LinearLayout>
 
