@@ -67,10 +67,12 @@
             android:name="com.watchdroid.Setpass"
             android:screenOrientation="portrait"/>
 
-        <receiver android:name="com.watchdroid.Listener">
+        <service android:name="com.watchdroid.LockScreenService"/>
+
+        <receiver android:name="com.watchdroid.BootReceiver">
             <intent-filter>
-                <action android:name="android.provider.Telephony.SECRET_CODE"/>
-                <data android:scheme="android_secret_code" android:host="111222"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.QUICKBOOT_POWERON"/>
             </intent-filter>
         </receiver>
 
