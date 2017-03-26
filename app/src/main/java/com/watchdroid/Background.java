@@ -40,7 +40,6 @@ public class Background extends Service {
         }
         return super.onStartCommand(intent, flags, startId);
     }
-
     TimerTask timerTask = new TimerTask() {
         @Override
         public void run() {
