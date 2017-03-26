@@ -21,34 +21,34 @@ WatchDroid also has an additional feature, which is an advanced pin protection m
 ```
 ```
 2.	Activate WatchDroid
- *	After installation, go to the system’s settings.
- *	Go to language and input.
- * In keyboard and input method options, enable WatchDroid keyboard. 
- *	Set WatchDroid keyboard as your default keyboard.
+       *	After installation, go to the system’s settings.
+       *	Go to language and input.
+       *      In keyboard and input method options, enable WatchDroid keyboard. 
+       *	Set WatchDroid keyboard as your default keyboard.
 ```
 ```
 3.	Setting pin 
- *	Open the app.
- *	Go to Settings tab.
- *	In Password section, select enable password.
- *	Set the password
-  i.	Enter First index position and enter the desired number for that index position.
-  ii.	Enter Second index position and enter the desired number for that index position.
-  iii.	 Save the pin.
+       *	Open the app.
+       *	Go to Settings tab.
+       *	In Password section, select enable password.
+       *	Set the password
+              i.	Enter First index position and enter the desired number for that index position.
+              ii.	Enter Second index position and enter the desired number for that index position.
+              iii.	 Save the pin.
 ```
 ```
 4.	Hide and unhide app
- *	Hiding the app
-  i.	Open the app
-  ii.	Go to Setting tab.
-  iii.	Select Hide icon from Hide icon option.
- *	Accessing the hidden app
-  i.	Go to system dialer.
-  ii.	Type ”*#*#111222#*#*”.
- *	Unhide the app 
-  i.	Open the app.
-  ii.	Go to Setting tab.
-  iii.	Unselect Hide icon from Hide icon option.
+       *	Hiding the app
+              i.	Open the app
+              ii.	Go to Setting tab.
+              iii.	Select Hide icon from Hide icon option.
+       *	Accessing the hidden app
+              i.	Go to system dialer.
+              ii.	Type ”*#*#111222#*#*”.
+       *	Unhide the app 
+              i.	Open the app.
+              ii.	Go to Setting tab.
+              iii.	Unselect Hide icon from Hide icon option.
 ```
 
 
