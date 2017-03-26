@@ -104,7 +104,7 @@ public class LogView extends Fragment {
             text.append("File not found");
         }
 
-        log = (TextView) getActivity().findViewById(R.id.log);
+        log = (TextView) getView().findViewById(R.id.log);
         log.setMovementMethod(new ScrollingMovementMethod());
         log.setText(text);
         log.setGravity(Gravity.NO_GRAVITY);
