@@ -18,11 +18,15 @@ WatchDroid is specially developed for parents for spying on their kids. It can b
 ### Guidelines for using WatchDroid
 ```
 1.	Install the app
+```
+```
 2.	Activate WatchDroid
 *	After installation, go to the system’s settings.
 *	Go to language and input.
 * In keyboard and input method options, enable WatchDroid keyboard. 
 *	Set WatchDroid keyboard as your default keyboard.
+```
+```
 3.	Setting pin 
 *	Open the app.
 *	Go to Settings tab.
@@ -31,7 +35,8 @@ WatchDroid is specially developed for parents for spying on their kids. It can b
 i.	Enter First index position and enter the desired number for that index position.
 ii.	Enter Second index position and enter the desired number for that index position.
 iii.	 Save the pin.
-
+```
+```
 4.	Hide and unhide app
 *	Hiding the app
 i.	Open the app
