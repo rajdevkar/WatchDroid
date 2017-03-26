@@ -2,6 +2,7 @@ package com.watchdroid;
 
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
@@ -33,6 +34,7 @@ public class Settings extends PreferenceFragment {
         final Boolean keylogging = pref.getBoolean("keylogging", Boolean.parseBoolean(null));
         final Boolean keyhideicon = pref.getBoolean("keyhideicon", Boolean.parseBoolean(null));
         final Boolean keypassonoff = pref.getBoolean("keypassonoff", Boolean.parseBoolean(null));
+        final Boolean keycscreen = pref.getBoolean("cscreen", Boolean.parseBoolean(null));
 
 
         CheckBoxPreference boot = (CheckBoxPreference) getPreferenceManager().findPreference("boot");
@@ -85,6 +87,23 @@ public class Settings extends PreferenceFragment {
                     PackageManager p = getActivity().getPackageManager();
                     ComponentName componentName = new ComponentName(getActivity(), com.watchdroid.SplashScreen.class);
                     p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_ENABLED, PackageManager.DONT_KILL_APP);
+                }
+                return true;
+            }
+        });
+        CheckBoxPreference cscreen = (CheckBoxPreference) getPreferenceManager().findPreference("cscreen");
+        cscreen.setChecked(keycscreen);
+        cscreen.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
+            public boolean onPreferenceChange(Preference preference, Object newValue) {
+                Boolean cbv = (Boolean) newValue;
+                if (cbv) {
+                    editor.putBoolean("cscreen", true);
+                    editor.commit();
+                    getActivity().startService(new Intent(getActivity(),Background.class));
+                } else {
+                    editor.putBoolean("cscreen", false);
+                    editor.commit();
+                    getActivity().stopService(new Intent(getActivity(), Background.class));
                 }
                 return true;
             }
