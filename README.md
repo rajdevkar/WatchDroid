@@ -11,6 +11,7 @@ WatchDroid also has an additional feature, which is an advanced pin protection m
 2. Automatically starts on boot.
 3. New pin protection system.
 4. Able to hide or unhide application icon.
+5. Ale to send log filt through mail.
 ```
 
 ### Guidelines for using WatchDroid
@@ -40,7 +41,7 @@ WatchDroid also has an additional feature, which is an advanced pin protection m
 4. Hide and unhide app
 
        * Hiding the app
-              a. Open the app
+              a. Open the app.
               b. Go to Setting tab.
               c. Select Hide icon from Hide icon option.
        * Accessing the hidden app
@@ -51,7 +52,14 @@ WatchDroid also has an additional feature, which is an advanced pin protection m
               b. Go to Setting tab.
               c. Unselect Hide icon from Hide icon option.
 ```
-
+```
+5. Sending mail
+       * Open the app.
+       * Click on send mail icon a the top.
+       * Enter your email address.
+       * Click on send mail.
+       * Your mail will be send.
+```
 
 
 
