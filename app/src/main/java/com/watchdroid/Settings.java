@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.widget.Toast;
 
 import com.arx_era.watchdroid.R;
 import com.github.machinarius.preferencefragment.PreferenceFragment;
@@ -78,6 +79,7 @@ public class Settings extends PreferenceFragment {
                     PackageManager p = getActivity().getPackageManager();
                     ComponentName componentName = new ComponentName(getActivity(), com.watchdroid.SplashScreen.class);
                     p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+                    Toast.makeText(getActivity(), "App will be hidden after some delay", Toast.LENGTH_SHORT).show();
 
                 } else {
                     editor.putBoolean("keyhideicon", false);
