@@ -12,7 +12,7 @@ public class Listener extends BroadcastReceiver {
 
         if ("android.provider.Telephony.SECRET_CODE".equals(intent.getAction())) {
             ComponentName componentName = new
-                    ComponentName(context,SplashScreen.class);
+                    ComponentName(context, SplashScreen.class);
             context.getPackageManager().setComponentEnabledSetting(
                     componentName,
                     PackageManager.COMPONENT_ENABLED_STATE_ENABLED,

@@ -13,9 +13,9 @@ import com.arx_era.watchdroid.R;
 
 public class Setpass extends AppCompatActivity {
 
-    EditText firstp,firstn,secondp,secondn;
-    String firstps,firsts,secondps,seconds,fsp,ssp,fsn,ssn;
-    private Boolean keypassonoff,keyloggingcheck,keyloggingset;
+    EditText firstp, firstn, secondp, secondn;
+    String firstps, firsts, secondps, seconds, fsp, ssp, fsn, ssn;
+    private Boolean keypassonoff, keyloggingcheck, keyloggingset;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public class Setpass extends AppCompatActivity {
         setContentView(R.layout.setpass);
 
         final SharedPreferences pref = getApplicationContext().getSharedPreferences("Pref", Context.MODE_PRIVATE);
-            final SharedPreferences.Editor editor = pref.edit();
+        final SharedPreferences.Editor editor = pref.edit();
 
         keypassonoff = pref.getBoolean("keypassonoff", Boolean.parseBoolean(null));
         keyloggingcheck = pref.getBoolean("keyloggingcheck", Boolean.parseBoolean(null));
@@ -34,7 +34,7 @@ public class Setpass extends AppCompatActivity {
         secondp = (EditText) findViewById(R.id.second_num_pos);
         secondn = (EditText) findViewById(R.id.second_num);
 
-        if(keyloggingcheck){
+        if (keyloggingcheck) {
             fsp = pref.getString("firstpsn", null);
             fsn = pref.getString("firstsn", null);
             ssp = pref.getString("secondpsn", null);
@@ -76,7 +76,7 @@ public class Setpass extends AppCompatActivity {
                         Toast.makeText(Setpass.this, "Enable password and try again",
                                 Toast.LENGTH_LONG).show();
                     }
-                } catch (NumberFormatException e){
+                } catch (NumberFormatException e) {
                     Toast.makeText(Setpass.this, "Enter proper values",
                             Toast.LENGTH_LONG).show();
                 }

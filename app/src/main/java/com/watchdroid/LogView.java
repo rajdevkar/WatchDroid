@@ -26,15 +26,15 @@ import java.io.IOException;
 public class LogView extends Fragment {
 
     private String FILENAME;
-    File dir,file,outfile;
+    File dir, file, outfile;
     StringBuilder text;
     String line;
     TextView log;
     Context mContext;
 
     private Boolean isFabOpen = false;
-    private FloatingActionButton plus,clear;
-    private Animation fab_open,fab_close,rotate_forward,rotate_backward;
+    private FloatingActionButton plus, clear;
+    private Animation fab_open, fab_close, rotate_forward, rotate_backward;
 
     public LogView() {
         // Required empty public constructor
@@ -79,9 +79,9 @@ public class LogView extends Fragment {
         plus = (FloatingActionButton) v.findViewById(R.id.plus);
         clear = (FloatingActionButton) v.findViewById(R.id.clear);
         fab_open = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fab_open);
-        fab_close = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),R.anim.fab_close);
-        rotate_forward = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),R.anim.rotate_forward);
-        rotate_backward = AnimationUtils.loadAnimation(getActivity().getApplicationContext(),R.anim.rotate_backward);
+        fab_close = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fab_close);
+        rotate_forward = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.rotate_forward);
+        rotate_backward = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.rotate_backward);
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -109,8 +109,8 @@ public class LogView extends Fragment {
         return v;
     }
 
-    public void animateFAB(){
-        if(isFabOpen){
+    public void animateFAB() {
+        if (isFabOpen) {
             plus.startAnimation(rotate_backward);
             clear.startAnimation(fab_close);
             clear.setClickable(false);

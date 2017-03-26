@@ -38,11 +38,10 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 "Pref",
                 Context.MODE_PRIVATE);
         final Boolean keyhideicon = pref.getBoolean("keyhideicon", Boolean.parseBoolean(null));
-        if(keyhideicon)
-        {
+        if (keyhideicon) {
             PackageManager p = getPackageManager();
-            ComponentName componentName= new ComponentName(MainActivity.this, com.watchdroid.SplashScreen.class);
-            p.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+            ComponentName componentName = new ComponentName(MainActivity.this, com.watchdroid.SplashScreen.class);
+            p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
 
         }
 
@@ -74,7 +73,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case R.id.loved:
-                String[] toastMessages = new String[] {"Thank You", "We appreciate your love", "Please live a like"};
+                String[] toastMessages = new String[]{"Thank You", "We appreciate your love", "Please live a like"};
                 int randomMsgIndex = random.nextInt(toastMessages.length - 1);
                 Toast.makeText(getApplicationContext(), toastMessages[randomMsgIndex], Toast.LENGTH_SHORT).show();
                 break;

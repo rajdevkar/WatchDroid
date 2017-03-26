@@ -47,7 +47,7 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
     public CharSequence getPageTitle(int position) {
         if (position == 0) {
             return "Status";
-        } else if(position == 1){
+        } else if (position == 1) {
             return "Log";
         } else {
             return "Settings";

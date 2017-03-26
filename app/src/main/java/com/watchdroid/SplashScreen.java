@@ -21,27 +21,27 @@ public class SplashScreen extends Activity {
         Boolean keypassonoff = pref.getBoolean("keypassonoff", Boolean.parseBoolean(null));
         Boolean keyloggingset = pref.getBoolean("keyloggingset", Boolean.parseBoolean(null));
 
-        if(keypassonoff){
-            if(keyloggingset) {
+        if (keypassonoff) {
+            if (keyloggingset) {
                 Intent i = new Intent(SplashScreen.this, Lock.class);
                 startActivity(i);
                 finish();
-            }else {
+            } else {
                 openapp();
                 Toast.makeText(SplashScreen.this, "If you enabled password then set pins to enable lockscreen",
                         Toast.LENGTH_SHORT).show();
             }
-        }
-        else {
+        } else {
             openapp();
         }
     }
 
-    private void openapp(){
+    private void openapp() {
         Intent j = new Intent(SplashScreen.this, MainActivity.class);
         startActivity(j);
         finish();
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

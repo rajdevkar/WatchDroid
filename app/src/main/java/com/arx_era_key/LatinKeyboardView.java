@@ -3,6 +3,7 @@ package com.arx_era_key;
 /**
  * Created by Tronix on 02-02-2017.
  */
+
 import android.content.Context;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.Keyboard.Key;
@@ -35,7 +36,7 @@ public class LatinKeyboardView extends KeyboardView {
     }
 
     void setSubtypeOnSpaceKey(final InputMethodSubtype subtype) {
-        final LatinKeyboard keyboard = (LatinKeyboard)getKeyboard();
+        final LatinKeyboard keyboard = (LatinKeyboard) getKeyboard();
         keyboard.setSpaceIcon(getResources().getDrawable(R.drawable.sym_keyboard_space));
         invalidateAllKeys();
     }

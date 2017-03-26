@@ -16,6 +16,7 @@ import com.arx_era.watchdroid.R;
  */
 public class Home extends Fragment {
     Context mContext;
+
     public Home() {
         // Required empty public constructor
     }
@@ -48,15 +49,15 @@ public class Home extends Fragment {
         Boolean passonoff = pref.getBoolean("keypassonoff", Boolean.parseBoolean(null));
         TextView keylogstatus = (TextView) getView().findViewById(R.id.keyloggerstatus);
         TextView passonoffstatus = (TextView) getView().findViewById(R.id.passonoffstatus);
-        if(keylogging){
+        if (keylogging) {
             keylogstatus.setText(" Active");
         } else {
             keylogstatus.setText(" Deactivate");
         }
-        if(passonoff){
-            passonoffstatus.setText("ON");
+        if (passonoff) {
+            passonoffstatus.setText(" ON");
         } else {
-            passonoffstatus.setText("OFF");
+            passonoffstatus.setText(" OFF");
         }
     }
 
