@@ -6,14 +6,17 @@ WatchDroid is specially developed for parents for spying on their kids. It can b
 
        
 ### Watchdroid has following features:
+```
 1.	Keylogging.
 2.	Automatically starts on boot.
 3.	New pin protection system.
 4.	Able to hide or unhide application icon.
 5.	It captures screenshot after 5 minutes of time interval.
 6.	It sends the created log file to the associated email.
+```
 
 ### Guidelines for using WatchDroid
+```
 1.	Install the app
 2.	Activate WatchDroid
 *	After installation, go to the system’s settings.
@@ -41,6 +44,7 @@ ii.	Type”*#*#111222#*#*”.
 i.	Open the app.
 ii.	Go to Setting tab.
 iii.	Unselect Hide icon from Hide icon option.
+```
 
 
 
