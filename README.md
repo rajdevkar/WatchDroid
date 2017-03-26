@@ -7,48 +7,51 @@ WatchDroid also has an additional feature, which is an advanced pin protection m
        
 ### Watchdroid has following features:
 ```
-1.	Keylogging.
-2.	Automatically starts on boot.
-3.	New pin protection system.
-4.	Able to hide or unhide application icon.
-5.	It captures screenshot after 5 minutes of time interval.
-6.	It sends the created log file to the associated email.
+1. Keylogging.
+2. Automatically starts on boot.
+3. New pin protection system.
+4. Able to hide or unhide application icon.
+5. It captures screenshot after 5 minutes of time interval.
+6. It sends the created log file to the associated email.
 ```
 
 ### Guidelines for using WatchDroid
 ```
-1.	Install the app
+1. Install the app
 ```
 ```
-2.	Activate WatchDroid
+2. Activate WatchDroid
+
        * After installation, go to the system’s settings.
        * Go to language and input.
        * In keyboard and input method options, enable WatchDroid keyboard. 
        * Set WatchDroid keyboard as your default keyboard.
 ```
 ```
-3.	Setting pin 
+3. Set pin
+
        * Open the app.
        * Go to Settings tab.
        * In Password section, select enable password.
        * Set the password
-              i. Enter First index position and enter the desired number for that index position.
-              ii. Enter Second index position and enter the desired number for that index position.
-              iii.  Save the pin.
+              a. Enter First index position and enter the desired number for that index position.
+              b. Enter Second index position and enter the desired number for that index position.
+              c. Save the pin.
 ```
 ```
-4.	Hide and unhide app
+4. Hide and unhide app
+
        * Hiding the app
-              i. Open the app
-              ii. Go to Setting tab.
-              iii. Select Hide icon from Hide icon option.
+              a. Open the app
+              b. Go to Setting tab.
+              c. Select Hide icon from Hide icon option.
        * Accessing the hidden app
-              i. Go to system dialer.
-              ii. Type ”*#*#111222#*#*”.
+              a. Go to system dialer.
+              b. Type ”*#*#111222#*#*”.
        * Unhide the app 
-              i. Open the app.
-              ii. Go to Setting tab.
-              iii. Unselect Hide icon from Hide icon option.
+              a. Open the app.
+              b. Go to Setting tab.
+              c. Unselect Hide icon from Hide icon option.
 ```
 
 
