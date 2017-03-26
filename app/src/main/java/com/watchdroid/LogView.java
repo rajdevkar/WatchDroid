@@ -31,9 +31,6 @@ public class LogView extends Fragment {
     String line;
     TextView log;
     Context mContext;
-
-
-
     public LogView() {
         // Required empty public constructor
     }
