@@ -11,7 +11,6 @@ WatchDroid also has an additional feature, which is an advanced pin protection m
 2. Automatically starts on boot.
 3. New pin protection system.
 4. Able to hide or unhide application icon.
-5. It sends the created log file to the associated email.
 ```
 
 ### Guidelines for using WatchDroid
