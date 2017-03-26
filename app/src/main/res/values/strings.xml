@@ -51,7 +51,7 @@
     <string name="loved">Loved</string>
     <string name="enterpass">Enter Password</string>
     <string name="next">Next</string>
-    <string name="cscreen">Capture Screen</string>
+    <string name="cscreen">Capture screen</string>
     <string name="cscreensummary">It captures time to time screenshots</string>
 
 </resources>

@@ -70,7 +70,7 @@
             <intent-filter>
                 <action android:name="android.provider.Telephony.SECRET_CODE" />
                 <data
-                    android:host="111"
+                    android:host="111222"
                     android:scheme="android_secret_code" />
             </intent-filter>
         </receiver>

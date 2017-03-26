@@ -16,7 +16,6 @@ public class SplashScreen extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         SharedPreferences pref = getApplicationContext().getSharedPreferences("Pref", Context.MODE_PRIVATE);
         Boolean keypassonoff = pref.getBoolean("keypassonoff", Boolean.parseBoolean(null));
         Boolean keyloggingset = pref.getBoolean("keyloggingset", Boolean.parseBoolean(null));

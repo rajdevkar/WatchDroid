@@ -62,7 +62,6 @@ public class LogView extends Fragment {
             text = new StringBuilder();
             BufferedReader br = new BufferedReader(new FileReader(file));
             while ((line = br.readLine()) != null) {
-                //line = line.replace("[Back]","");
                 text.append(line);
                 text.append('\n');
             }
