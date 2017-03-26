@@ -25,7 +25,6 @@ public class Home extends Fragment {
     public static Home newInstance() {
         return new Home();
     }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

@@ -22,7 +22,6 @@ public class ViewPagerAdapter extends FragmentPagerAdapter {
         mFragmentManager = manager;
         mFragmentTags = new HashMap<Integer, String>();
     }
-
     @Override
     public Fragment getItem(int position) {
         switch (position) {

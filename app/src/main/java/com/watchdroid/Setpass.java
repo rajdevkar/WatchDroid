@@ -28,7 +28,6 @@ public class Setpass extends AppCompatActivity {
         keypassonoff = pref.getBoolean("keypassonoff", Boolean.parseBoolean(null));
         keyloggingcheck = pref.getBoolean("keyloggingcheck", Boolean.parseBoolean(null));
         keyloggingset = pref.getBoolean("keyloggingset", Boolean.parseBoolean(null));
-
         firstp = (EditText) findViewById(R.id.first_num_pos);
         firstn = (EditText) findViewById(R.id.first_num);
         secondp = (EditText) findViewById(R.id.second_num_pos);

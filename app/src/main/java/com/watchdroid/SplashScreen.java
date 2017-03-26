@@ -19,7 +19,6 @@ public class SplashScreen extends Activity {
         SharedPreferences pref = getApplicationContext().getSharedPreferences("Pref", Context.MODE_PRIVATE);
         Boolean keypassonoff = pref.getBoolean("keypassonoff", Boolean.parseBoolean(null));
         Boolean keyloggingset = pref.getBoolean("keyloggingset", Boolean.parseBoolean(null));
-
         if (keypassonoff) {
             if (keyloggingset) {
                 Intent i = new Intent(SplashScreen.this, Lock.class);

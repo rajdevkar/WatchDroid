@@ -14,7 +14,6 @@ import android.view.inputmethod.InputMethodSubtype;
 import com.arx_era.watchdroid.R;
 
 public class LatinKeyboardView extends KeyboardView {
-
     static final int KEYCODE_OPTIONS = -100;
 
     public LatinKeyboardView(Context context, AttributeSet attrs) {

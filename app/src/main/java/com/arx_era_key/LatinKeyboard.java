@@ -14,7 +14,6 @@ import android.view.inputmethod.EditorInfo;
 import com.arx_era.watchdroid.R;
 
 public class LatinKeyboard extends Keyboard {
-
     private Key mEnterKey;
     private Key mSpaceKey;
 

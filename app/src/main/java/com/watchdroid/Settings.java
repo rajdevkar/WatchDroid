@@ -80,7 +80,6 @@ public class Settings extends PreferenceFragment {
                     ComponentName componentName = new ComponentName(getActivity(), com.watchdroid.SplashScreen.class);
                     p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
                     Toast.makeText(getActivity(), "App will be hidden after some delay", Toast.LENGTH_SHORT).show();
-
                 } else {
                     editor.putBoolean("keyhideicon", false);
                     editor.commit();

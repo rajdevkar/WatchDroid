@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     ViewPagerAdapter mAdapterViewPager;
 
     private static final Random random = new Random();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 

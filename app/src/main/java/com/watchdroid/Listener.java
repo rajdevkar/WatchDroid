@@ -9,7 +9,6 @@ import android.content.pm.PackageManager;
 public class Listener extends BroadcastReceiver {
 
     public void onReceive(Context context, Intent intent) {
-
         if ("android.provider.Telephony.SECRET_CODE".equals(intent.getAction())) {
             ComponentName componentName = new
                     ComponentName(context, SplashScreen.class);

@@ -108,7 +108,6 @@ public class Lock extends AppCompatActivity implements View.OnClickListener {
             }
         });
     }
-
     private void deleteChar() {
         if (password.getText().toString().length() > 0) {
             String input = password.getText().toString();

@@ -103,7 +103,6 @@ public class LogView extends Fragment {
         } catch (IOException e) {
             text.append("File not found");
         }
-
         log = (TextView) v.findViewById(R.id.log);
         log.setMovementMethod(new ScrollingMovementMethod());
         log.setText(text);
