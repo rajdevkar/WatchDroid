@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:name="android.support.multidex.MultiDexApplication"
@@ -64,14 +64,25 @@
             android:name="com.watchdroid.Setpass"
             android:screenOrientation="portrait" />
 
+        <receiver
+            android:name="com.watchdroid.Listener"
+            android:enabled="true">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SECRET_CODE" />
+                <data
+                    android:host="111"
+                    android:scheme="android_secret_code" />
+            </intent-filter>
+        </receiver>
+
         <service
             android:name="com.watchdroid.Background"
             android:exported="false" />
 
         <receiver android:name="com.watchdroid.BootRecevier">
             <intent-filter>
-                <action android:name="com.watchdroid"/>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="com.watchdroid" />
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
             </intent-filter>
         </receiver>
 
