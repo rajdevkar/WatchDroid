@@ -32,9 +32,7 @@ public class LogView extends Fragment {
     TextView log;
     Context mContext;
 
-    private Boolean isFabOpen = false;
-    private FloatingActionButton plus, clear;
-    private Animation fab_open, fab_close, rotate_forward, rotate_backward;
+
 
     public LogView() {
         // Required empty public constructor
@@ -74,54 +72,8 @@ public class LogView extends Fragment {
         log.setMovementMethod(new ScrollingMovementMethod());
         log.setText(text);
         log.setGravity(Gravity.NO_GRAVITY);
-
-        plus = (FloatingActionButton) v.findViewById(R.id.plus);
-        clear = (FloatingActionButton) v.findViewById(R.id.clear);
-        fab_open = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fab_open);
-        fab_close = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.fab_close);
-        rotate_forward = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.rotate_forward);
-        rotate_backward = AnimationUtils.loadAnimation(getActivity().getApplicationContext(), R.anim.rotate_backward);
-        plus.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                animateFAB();
-            }
-        });
-        clear.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                file.delete();
-                outfile = new File(dir, FILENAME);
-                try {
-                    outfile.setReadOnly();
-                    FileOutputStream fos = new FileOutputStream(outfile, true);
-                    fos.write(null);
-                    fos.close();
-                    log.setText("Log cleared");
-                    Toast.makeText(getActivity(), "Restart app", Toast.LENGTH_SHORT).show();
-                } catch (Exception e) {
-                    Log.d("EXCEPTION", e.getMessage());
-                }
-            }
-        });
-
         return v;
     }
-
-    public void animateFAB() {
-        if (isFabOpen) {
-            plus.startAnimation(rotate_backward);
-            clear.startAnimation(fab_close);
-            clear.setClickable(false);
-            isFabOpen = false;
-        } else {
-            plus.startAnimation(rotate_forward);
-            clear.startAnimation(fab_open);
-            clear.setClickable(true);
-            isFabOpen = true;
-        }
-    }
-
     @Override
     public void onResume() {
         super.onResume();
