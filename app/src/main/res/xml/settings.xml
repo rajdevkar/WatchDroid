@@ -7,10 +7,6 @@
             android:summary="@string/keylogbootinfo"
             android:title="@string/keylogboot"/>
 
-        <CheckBoxPreference
-            android:key="cscreen"
-            android:summary="@string/cscreensummary"
-            android:title="@string/cscreen"/>
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/password_category">
