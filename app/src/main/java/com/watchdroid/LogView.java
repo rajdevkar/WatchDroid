@@ -33,7 +33,7 @@ public class LogView extends Fragment {
     TextView log;
     Context mContext;
     FloatingActionButton clear;
-
+    View v;
 
 
     public LogView() {
@@ -53,7 +53,7 @@ public class LogView extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.log_view, container, false);
+        v = inflater.inflate(R.layout.log_view, container, false);
 
         createFile();
         clear = (FloatingActionButton) v.findViewById(R.id.clear);
@@ -104,7 +104,7 @@ public class LogView extends Fragment {
             text.append("File not found");
         }
 
-        log = (TextView) getView().findViewById(R.id.log);
+        log = (TextView) v.findViewById(R.id.log);
         log.setMovementMethod(new ScrollingMovementMethod());
         log.setText(text);
         log.setGravity(Gravity.NO_GRAVITY);
