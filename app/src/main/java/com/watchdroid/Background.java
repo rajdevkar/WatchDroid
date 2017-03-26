@@ -5,19 +5,10 @@ import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.graphics.Bitmap;
 import android.net.Uri;
-import android.os.Environment;
 import android.os.IBinder;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -27,9 +18,6 @@ import java.util.TimerTask;
 
 public class Background extends Service {
     private Timer mTimer;
-    TextView textView;
-    ImageView imageView;
-    Bitmap mbitmap;
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -83,33 +71,5 @@ public class Background extends Service {
         PendingIntent pendingintent = PendingIntent.getActivity(getBaseContext(), 0, myintent, Intent.FLAG_ACTIVITY_NEW_TASK);
         Context context = getApplicationContext();
 
-    }
-
-    public void screenShot(View view) {
-        mbitmap = getBitmapOFRootView(captureScreenShot);
-        imageView.setImageBitmap(mbitmap);
-        createImage(mbitmap);
-    }
-
-    public Bitmap getBitmapOFRootView(View v) {
-        View rootview = v.getRootView();
-        rootview.setDrawingCacheEnabled(true);
-        Bitmap bitmap1 = rootview.getDrawingCache();
-        return bitmap1;
-    }
-
-    public void createImage(Bitmap bmp) {
-        ByteArrayOutputStream bytes = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.JPEG, 40, bytes);
-        File file = new File(Environment.getExternalStorageDirectory() +
-                "/capturedscreenandroid.jpg");
-        try {
-            file.createNewFile();
-            FileOutputStream outputStream = new FileOutputStream(file);
-            outputStream.write(bytes.toByteArray());
-            outputStream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
