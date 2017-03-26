@@ -8,6 +8,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceScreen;
 import android.widget.Toast;
 
 import com.arx_era.watchdroid.R;
@@ -26,7 +27,6 @@ public class Settings extends PreferenceFragment {
 
         // Load the preferences from an XML resource
         addPreferencesFromResource(R.xml.settings);
-
         SharedPreferences pref = getActivity().getSharedPreferences(
                 "Pref",
                 Context.MODE_PRIVATE);
@@ -90,6 +90,7 @@ public class Settings extends PreferenceFragment {
                 return true;
             }
         });
+        PreferenceScreen email=(PreferenceScreen)getPreferenceManager().findPreference("currentMail");
 
     }
 

@@ -9,5 +9,12 @@
         app:showAsAction="always"
         android:actionLayout="@layout/toolbar"
         android:title="@string/loved" />
+    <item
+        android:id="@+id/mail"
+        android:icon="@drawable/mail"
+        android:orderInCategory="99"
+        app:showAsAction="always"
+        android:actionLayout="@layout/toolbar"
+        android:title="Send Mail" />
 
 </menu>

@@ -53,5 +53,8 @@
     <string name="next">Next</string>
     <string name="cscreen">Capture screen</string>
     <string name="cscreensummary">It captures time to time screenshots</string>
+    <string name="set_mail">Send log</string>
+    <string name="title_activity_set_email">Set Email ID</string>
+    <string name="title_activity_setmail">Set Email</string>
 
 </resources>

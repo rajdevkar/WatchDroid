@@ -30,5 +30,4 @@
             android:summary="Show or Hide icon in launcher"
             android:title="Hide Icon"/>
     </PreferenceCategory>
-
 </PreferenceScreen>

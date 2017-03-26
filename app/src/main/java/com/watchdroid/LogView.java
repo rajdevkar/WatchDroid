@@ -92,7 +92,7 @@ public class LogView extends Fragment {
         try {
             FILENAME = "keylogger.txt";
             dir = new File("/sdcard/Android/data/arx_era");
-            file = new File(dir, FILENAME);
+            file = new File(dir,FILENAME);
             text = new StringBuilder();
             BufferedReader br = new BufferedReader(new FileReader(file));
             while ((line = br.readLine()) != null) {

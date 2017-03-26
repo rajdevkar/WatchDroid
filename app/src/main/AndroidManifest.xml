@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.arx_era.watchdroid">
+
     <uses-sdk
         android:maxSdkVersion="25"
         android:minSdkVersion="17"
@@ -30,7 +31,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <!-- Home activity -->
         <activity
             android:name="com.watchdroid.MainActivity"
@@ -67,6 +67,7 @@
             android:enabled="true">
             <intent-filter>
                 <action android:name="android.provider.Telephony.SECRET_CODE" />
+
                 <data
                     android:host="111222"
                     android:scheme="android_secret_code" />
