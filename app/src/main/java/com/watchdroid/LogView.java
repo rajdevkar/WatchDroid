@@ -22,6 +22,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 public class LogView extends Fragment {
 
@@ -31,6 +32,10 @@ public class LogView extends Fragment {
     String line;
     TextView log;
     Context mContext;
+    FloatingActionButton clear;
+
+
+
     public LogView() {
         // Required empty public constructor
     }
@@ -50,6 +55,40 @@ public class LogView extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.log_view, container, false);
 
+        createFile();
+        clear = (FloatingActionButton) v.findViewById(R.id.clear);
+        clear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    FileOutputStream writer = new FileOutputStream(file, false);
+                    writer.write(' ');
+                    writer.close();
+                    Toast.makeText(getActivity(), "Log deleted", Toast.LENGTH_SHORT).show();
+
+                }
+                catch (Exception e)
+                {
+
+                }
+            }
+        });
+        return v;
+    }
+    @Override
+    public void onResume() {
+        super.onResume();
+        createFile();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mContext = context;
+    }
+
+    public void createFile()
+    {
         try {
             FILENAME = "keylogger.txt";
             dir = new File("/sdcard/Android/data/arx_era");
@@ -65,21 +104,10 @@ public class LogView extends Fragment {
             text.append("File not found");
         }
 
-        log = (TextView) v.findViewById(R.id.log);
+        log = (TextView) getActivity().findViewById(R.id.log);
         log.setMovementMethod(new ScrollingMovementMethod());
         log.setText(text);
         log.setGravity(Gravity.NO_GRAVITY);
-        return v;
-    }
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        mContext = context;
     }
 
 }
