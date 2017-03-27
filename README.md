@@ -17,6 +17,8 @@ WatchDroid also has an additional feature, which is an advanced pin protection m
 ### Guidelines for using WatchDroid
 ```
 1. Install the app
+
+       * Give Permissions (Android 6.0+ Devices need storage permission)
 ```
 ```
 2. Activate WatchDroid
