@@ -32,23 +32,16 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
     private ViewPager viewPager;
     ViewPagerAdapter mAdapterViewPager;
     Context context=this;
-
+    SharedPreferences pref;
     private static final Random random = new Random();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        SharedPreferences pref = getSharedPreferences(
+        pref = getSharedPreferences(
                 "Pref",
                 Context.MODE_PRIVATE);
-        final Boolean keyhideicon = pref.getBoolean("keyhideicon", Boolean.parseBoolean(null));
-        if (keyhideicon) {
-            PackageManager p = getPackageManager();
-            ComponentName componentName = new ComponentName(MainActivity.this, com.watchdroid.SplashScreen.class);
-            p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
-
-        }
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -84,7 +77,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 break;
             case R.id.mail:
 
-                LayoutInflater li = LayoutInflater.from(context);
+                /*LayoutInflater li = LayoutInflater.from(context);
                 View promptsView = li.inflate(R.layout.sent_mail, null);
 
                 AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
@@ -112,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
 
                                         startActivity(emailIntent);
                                     }
-                                }).create().show();
+                                }).create().show();*/
                 break;
         }
         return super.onOptionsItemSelected(item);
@@ -144,6 +137,13 @@ public class MainActivity extends AppCompatActivity implements ViewPager.OnPageC
                 .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        final Boolean keyhideicon = pref.getBoolean("keyhideicon", Boolean.parseBoolean(null));
+                        if(keyhideicon){
+                            PackageManager p = getPackageManager();
+                            ComponentName componentName = new ComponentName(MainActivity.this, com.watchdroid.SplashScreen.class);
+                            p.setComponentEnabledSetting(componentName, PackageManager.COMPONENT_ENABLED_STATE_DISABLED, PackageManager.DONT_KILL_APP);
+                            Toast.makeText(MainActivity.this, "App will be hidden after some delay", Toast.LENGTH_SHORT).show();
+                        }
                         finish();
                     }
 
